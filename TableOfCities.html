@@ -8,6 +8,7 @@
     </head>
     <body link="black" vlink="black">
         <a name="TableOfCities"></a>
+        
         <hr>  
 
         <ul type="None">
@@ -17,51 +18,154 @@
 
         <hr> 
 
-        <form >
-            <details>
-                <summary> График</summary>
+        <p>
+            <form >
+                <details>
+                    <summary> График</summary>
 
-                <h4>Значение по оси OX</h4>
+                    <h4>Значение по оси OX</h4>
 
-                <ul type="None">
-                    <li><label><input type="radio" name="OxParam" value="Param1"> Субъект РФ</label></li>
-                    <li><label><input type="radio" name="OxParam" value="Param2"> Федеральный округ</label></li>
-                    <li><label><input type="radio" name="OxParam" value="Param3"> Расстояние от городов до москвы, км (диапазоны)</label></li>
-                </ul>
+                    <ul type="None">
+                        <li><label><input type="radio" name="ox_param" value="Param1"> Субъект РФ</label></li>
+                        <li><label><input type="radio" name="ox_param" value="Param2"> Федеральный округ</label></li>
+                        <li><label><input type="radio" name="ox_param" value="Param3"> Расстояние от городов до москвы, км (диапазоны)</label></li>
+                    </ul>
 
-                <h4>Значение по оси OY</h4>
+                    <h4>Значение по оси OY</h4>
 
-                <ul type="None">
-                    <li><label><input type="checkbox" name="OyParam" value="Param1"> Суммарное население в городах</label></li>
-                    <li><label><input type="checkbox" name="OyParam" value="Param2"> Суммарная площадь городов</label></li>
-                    <li><label><input type="checkbox" name="OyParam" value="Param3"> Средняя зарплата в городах</label></li>
-                    <li><label><input type="checkbox" name="OyParam" value="Param3"> Количество городов</label></li>
-                </ul>
-            </details>
-        </form>
+                    <ul type="None">
+                        <li><label><input type="checkbox" name="oy_param" value="Param1"> Суммарное население в городах</label></li>
+                        <li><label><input type="checkbox" name="oy_param" value="Param2"> Суммарная площадь городов</label></li>
+                        <li><label><input type="checkbox" name="oy_param" value="Param3"> Средняя зарплата в городах</label></li>
+                        <li><label><input type="checkbox" name="oy_param" value="Param3"> Количество городов</label></li>
+                    </ul>
 
-        <form >
-            <details>
-                <summary> Фильтры</summary>
-            </details>
-        </form>
+                    <p>
+                        <input type="button" value="Построить">
+                    </p>
 
-        <form >
-            <details>
-                <summary> Сортировка</summary>
-            </details>
-        </form>
+                    <p> 
+                        Здесь будет график
+                    </p>
+                </details>  
+            </form>
+        </p>
+
+        <p>
+            <form >
+                <details>
+                    <summary> Фильтры</summary>
+                    <p>
+                        <label>Город РФ: <input type="text" name="city_name_filter" id="city_name_filter"></label>
+                    </p>
+
+                    <p>
+                        <label>Субъект РФ: <input type="text" name="subject_name_filter" id="subject_name_filter"></label>
+                    </p>
+
+                    <p>
+                        <label>Федеральный округ РФ: <input type="text" name="federal_district_filter" id="federal_district_filter"></label>
+                    </p>
+
+                    <p>
+                    <label>Площадь города: от <input type="text" name="from_square_filter" id="from_square_filter"> км<sup>2</sup> до <input type="text" name="to_square_filter" id="to_square_filter"> км<sup>2</sup></label>
+                    </p>
+
+                    <p>
+                    <label>Население города 2026 год: от <input type="text" name="from_population_filter" id="from_population_filter"> тыс.чел. до <input type="text" name="to_population_filter" id="to_population_filter"> тыс.чел.</label>
+                    </p>
+
+                    <p>
+                    <label>Средняя зарплата в городе 2026 год: от <input type="text" name="from_salary_filter" id="from_salary_filter"> тыс.рубл. до <input type="text" name="to_salary_filter" id="to_salary_filter"> тыс.рубл.</label>                   
+                    </p>
+
+                    <p>
+                        <label>Расстояние от города до Москвы: от <input type="text" name="from_moskov_distanse_filter" id="from_moskov_distanse_filter"> км. до <input type="text" name="to_moskov_distanse_filter" id="to_moskov_distanse_filter"> км.</label>                   
+                    </p>
+
+                    <p>
+                        <input type="button" value="Найти">
+                    </p>
+                </details>
+            </form>
+        </p>
+
+        <p>
+            <form >
+                <details>
+                    <summary> Сортировка</summary>
+
+                    <p>
+                        <label>
+                            <label for="sort_first">Первый уровень:</label>
+                            <select name="sort_first" id="sort_first">
+                                <option value="none">Нет</option>
+                                <option value="cityname">Город РФ</option>
+                                <option value="subjectname">Субъект РФ</option>
+                                <option value="federaldistrict">Федеральный окуруг РФ</option>
+                                <option value="square">Площадь города</option>
+                                <option value="population">Наседение города 2026 год</option>
+                                <option value="salary">Средняя зарплата в городе 2026 год</option>
+                                <option value="distance">Расстояние до Москвы</option>
+                            </select>
+                            по убыванию?
+                            <input type="checkbox">
+                        </label>
+                    </p>
+                        
+                    <p>
+                        <label>
+                            <label for="sort_second">Второй уровень:</label>
+                            <select name="sort_second" id="sort_second">
+                                <option value="none">Нет</option>
+                                <option value="cityname">Город РФ</option>
+                                <option value="subjectname">Субъект РФ</option>
+                                <option value="federaldistrict">Федеральный окуруг РФ</option>
+                                <option value="square">Площадь города</option>
+                                <option value="population">Наседение города 2026 год</option>
+                                <option value="salary">Средняя зарплата в городе 2026 год</option>
+                                <option value="distance">Расстояние до Москвы</option>
+                            </select>
+                            по убыванию?
+                            <input type="checkbox">
+                        </label>
+                    </p>
+
+                    <p>
+                        <label>
+                            <label for="sort_third">Третий уровень:</label>
+                            <select name="sort_third" id="sort_third">
+                                <option value="none">Нет</option>
+                                <option value="cityname">Город РФ</option>
+                                <option value="subjectname">Субъект РФ</option>
+                                <option value="federaldistrict">Федеральный окуруг РФ</option>
+                                <option value="square">Площадь города</option>
+                                <option value="population">Наседение города 2026 год</option>
+                                <option value="salary">Средняя зарплата в городе 2026 год</option>
+                                <option value="distance">Расстояние до Москвы</option>
+                            </select>
+                            по убыванию?
+                            <input type="checkbox">
+                        </label>
+                    </p>
+
+
+                    <p>
+                        <input type="button" value="Сортировать">
+                    </p>
+                </details>
+            </form>
+        </p>
 
         <table border="1">
             <thead>
                 <tr>
                 <th>Город РФ</th>
                 <th>Субъект РФ</th>
-                <th>Федеральный <br> округ</th>
-                <th>Год основания<br>города</th>
+                <th>Федеральный <br> округ РФ</th>
                 <th>Площадь города,<br> км²</th>
-                <th>Население города<br>2026 г. (тыс. чел.)</th>
-                <th>Средняя зарплата<br>в городе, тыс. руб.</th>
+                <th>Население города<br>2026 год (тыс. чел.)</th>
+                <th>Средняя зарплата<br>в городе 2026 год,<br>тыс. рубл.</th>
                 <th>Расстояние от<br>города до<br>Москвы, км</th>
                 </tr>
             </thead>
@@ -70,7 +174,6 @@
                 <td>Москва</td>
                 <td>Город федерального значения</td>
                 <td>Центральный</td>
-                <td>1147</td>
                 <td>2561</td>
                 <td>13 150</td>
                 <td>140</td>
@@ -81,7 +184,6 @@
                 <td>Балашиха</td>
                 <td>Московская область</td>
                 <td>Центральный</td>
-                <td>1830</td>
                 <td>244</td>
                 <td>530</td>
                 <td>85</td>
@@ -92,7 +194,6 @@
                 <td>Подольск</td>
                 <td>Московская область</td>
                 <td>Центральный</td>
-                <td>1781</td>
                 <td>40</td>
                 <td>312</td>
                 <td>80</td>
@@ -103,7 +204,6 @@
                 <td>Химки</td>
                 <td>Московская область</td>
                 <td>Центральный</td>
-                <td>1939</td>
                 <td>110</td>
                 <td>255</td>
                 <td>90</td>
@@ -114,7 +214,6 @@
                 <td>Мытищи</td>
                 <td>Московская область</td>
                 <td>Центральный</td>
-                <td>1460</td>
                 <td>35</td>
                 <td>255</td>
                 <td>85</td>
@@ -125,7 +224,6 @@
                 <td>Санкт-Петербург</td>
                 <td>Город федерального значения</td>
                 <td>Северо-Западный</td>
-                <td>1703</td>
                 <td>1439</td>
                 <td>5 600</td>
                 <td>95</td>
@@ -136,7 +234,6 @@
                 <td>Гатчина</td>
                 <td>Ленинградская область</td>
                 <td>Северо-Западный</td>
-                <td>1796</td>
                 <td>29</td>
                 <td>88</td>
                 <td>65</td>
@@ -147,7 +244,6 @@
                 <td>Выборг</td>
                 <td>Ленинградская область</td>
                 <td>Северо-Западный</td>
-                <td>1293</td>
                 <td>161</td>
                 <td>72</td>
                 <td>60</td>
@@ -158,7 +254,6 @@
                 <td>Всеволожск</td>
                 <td>Ленинградская область</td>
                 <td>Северо-Западный</td>
-                <td>1892</td>
                 <td>18</td>
                 <td>78</td>
                 <td>65</td>
@@ -169,7 +264,6 @@
                 <td>Екатеринбург</td>
                 <td>Свердловская область</td>
                 <td>Уральский</td>
-                <td>1723</td>
                 <td>468</td>
                 <td>1 540</td>
                 <td>75</td>
@@ -180,7 +274,6 @@
                 <td>Нижний Тагил</td>
                 <td>Свердловская область</td>
                 <td>Уральский</td>
-                <td>1722</td>
                 <td>298</td>
                 <td>335</td>
                 <td>60</td>
@@ -191,7 +284,6 @@
                 <td>Каменск-Уральский</td>
                 <td>Свердловская область</td>
                 <td>Уральский</td>
-                <td>1701</td>
                 <td>144</td>
                 <td>162</td>
                 <td>55</td>
@@ -202,7 +294,6 @@
                 <td>Хабаровск</td>
                 <td>Хабаровский край</td>
                 <td>Дальневосточный</td>
-                <td>1858</td>
                 <td>386</td>
                 <td>617</td>
                 <td>80</td>
@@ -213,7 +304,6 @@
                 <td>Комсомольск-на-Амуре</td>
                 <td>Хабаровский край</td>
                 <td>Дальневосточный</td>
-                <td>1932</td>
                 <td>325</td>
                 <td>235</td>
                 <td>70</td>
@@ -224,7 +314,6 @@
                 <td>Амурск</td>
                 <td>Хабаровский край</td>
                 <td>Дальневосточный</td>
-                <td>1958</td>
                 <td>32</td>
                 <td>37</td>
                 <td>55</td>
@@ -235,7 +324,6 @@
                 <td>Калининград</td>
                 <td>Калининградская область</td>
                 <td>Северо-Западный</td>
-                <td>1255</td>
                 <td>224</td>
                 <td>490</td>
                 <td>60</td>
@@ -246,7 +334,6 @@
                 <td>Советск</td>
                 <td>Калининградская область</td>
                 <td>Северо-Западный</td>
-                <td>1288</td>
                 <td>44</td>
                 <td>38</td>
                 <td>45</td>
@@ -257,7 +344,6 @@
                 <td>Черняховск</td>
                 <td>Калининградская область</td>
                 <td>Северо-Западный</td>
-                <td>1336</td>
                 <td>58</td>
                 <td>35</td>
                 <td>45</td>
@@ -268,7 +354,6 @@
                 <td>Казань</td>
                 <td>Республика Татарстан</td>
                 <td>Приволжский</td>
-                <td>1005</td>
                 <td>425</td>
                 <td>1 315</td>
                 <td>70</td>
@@ -279,7 +364,6 @@
                 <td>Набережные Челны</td>
                 <td>Республика Татарстан</td>
                 <td>Приволжский</td>
-                <td>1626</td>
                 <td>171</td>
                 <td>545</td>
                 <td>65</td>
@@ -290,7 +374,6 @@
                 <td>Нижнекамск</td>
                 <td>Республика Татарстан</td>
                 <td>Приволжский</td>
-                <td>1961</td>
                 <td>116</td>
                 <td>240</td>
                 <td>65</td>
@@ -301,7 +384,6 @@
                 <td>Альметьевск</td>
                 <td>Республика Татарстан</td>
                 <td>Приволжский</td>
-                <td>1953</td>
                 <td>115</td>
                 <td>158</td>
                 <td>70</td>
@@ -312,7 +394,6 @@
                 <td>Нижний Новгород</td>
                 <td>Нижегородская область</td>
                 <td>Приволжский</td>
-                <td>1221</td>
                 <td>410</td>
                 <td>1 210</td>
                 <td>68</td>
@@ -323,7 +404,6 @@
                 <td>Дзержинск</td>
                 <td>Нижегородская область</td>
                 <td>Приволжский</td>
-                <td>1929</td>
                 <td>421</td>
                 <td>215</td>
                 <td>55</td>
@@ -334,7 +414,6 @@
                 <td>Арзамас</td>
                 <td>Нижегородская область</td>
                 <td>Приволжский</td>
-                <td>1578</td>
                 <td>42</td>
                 <td>103</td>
                 <td>50</td>
@@ -345,7 +424,6 @@
                 <td>Новосибирск</td>
                 <td>Новосибирская область</td>
                 <td>Сибирский</td>
-                <td>1893</td>
                 <td>502</td>
                 <td>1 635</td>
                 <td>70</td>
@@ -356,7 +434,6 @@
                 <td>Бердск</td>
                 <td>Новосибирская область</td>
                 <td>Сибирский</td>
-                <td>1716</td>
                 <td>67</td>
                 <td>103</td>
                 <td>55</td>
@@ -367,7 +444,6 @@
                 <td>Искитим</td>
                 <td>Новосибирская область</td>
                 <td>Сибирский</td>
-                <td>1717</td>
                 <td>30</td>
                 <td>54</td>
                 <td>50</td>
@@ -378,7 +454,6 @@
                 <td>Ярославль</td>
                 <td>Ярославская область</td>
                 <td>Центральный</td>
-                <td>1010</td>
                 <td>205</td>
                 <td>570</td>
                 <td>58</td>
@@ -389,7 +464,6 @@
                 <td>Рыбинск</td>
                 <td>Ярославская область</td>
                 <td>Центральный</td>
-                <td>1071</td>
                 <td>101</td>
                 <td>177</td>
                 <td>50</td>
@@ -400,7 +474,6 @@
                 <td>Переславль-Залесский</td>
                 <td>Ярославская область</td>
                 <td>Центральный</td>
-                <td>1152</td>
                 <td>23</td>
                 <td>37</td>
                 <td>45</td>
@@ -411,7 +484,6 @@
                 <td>Краснодар</td>
                 <td>Краснодарский край</td>
                 <td>Южный</td>
-                <td>1793</td>
                 <td>339</td>
                 <td>1 135</td>
                 <td>65</td>
@@ -422,7 +494,6 @@
                 <td>Сочи</td>
                 <td>Краснодарский край</td>
                 <td>Южный</td>
-                <td>1838</td>
                 <td>177</td>
                 <td>445</td>
                 <td>65</td>
@@ -433,7 +504,6 @@
                 <td>Новороссийск</td>
                 <td>Краснодарский край</td>
                 <td>Южный</td>
-                <td>1838</td>
                 <td>81</td>
                 <td>262</td>
                 <td>60</td>
@@ -444,7 +514,6 @@
                 <td>Армавир</td>
                 <td>Краснодарский край</td>
                 <td>Южный</td>
-                <td>1839</td>
                 <td>280</td>
                 <td>185</td>
                 <td>48</td>
@@ -455,7 +524,6 @@
                 <td>Челябинск</td>
                 <td>Челябинская область</td>
                 <td>Уральский</td>
-                <td>1736</td>
                 <td>501</td>
                 <td>1 180</td>
                 <td>62</td>
@@ -466,7 +534,6 @@
                 <td>Магнитогорск</td>
                 <td>Челябинская область</td>
                 <td>Уральский</td>
-                <td>1929</td>
                 <td>392</td>
                 <td>408</td>
                 <td>65</td>
@@ -477,7 +544,6 @@
                 <td>Златоуст</td>
                 <td>Челябинская область</td>
                 <td>Уральский</td>
-                <td>1754</td>
                 <td>118</td>
                 <td>160</td>
                 <td>48</td>
@@ -488,7 +554,6 @@
                 <td>Миасс</td>
                 <td>Челябинская область</td>
                 <td>Уральский</td>
-                <td>1773</td>
                 <td>112</td>
                 <td>150</td>
                 <td>52</td>
@@ -499,7 +564,6 @@
                 <td>Ростов-на-Дону</td>
                 <td>Ростовская область</td>
                 <td>Южный</td>
-                <td>1749</td>
                 <td>348</td>
                 <td>1 140</td>
                 <td>60</td>
@@ -510,7 +574,6 @@
                 <td>Таганрог</td>
                 <td>Ростовская область</td>
                 <td>Южный</td>
-                <td>1698</td>
                 <td>80</td>
                 <td>245</td>
                 <td>50</td>
@@ -521,7 +584,6 @@
                 <td>Шахты</td>
                 <td>Ростовская область</td>
                 <td>Южный</td>
-                <td>1805</td>
                 <td>158</td>
                 <td>225</td>
                 <td>45</td>
@@ -532,7 +594,6 @@
                 <td>Новочеркасск</td>
                 <td>Ростовская область</td>
                 <td>Южный</td>
-                <td>1805</td>
                 <td>128</td>
                 <td>163</td>
                 <td>50</td>
@@ -543,7 +604,6 @@
                 <td>Самара</td>
                 <td>Самарская область</td>
                 <td>Приволжский</td>
-                <td>1586</td>
                 <td>541</td>
                 <td>1 160</td>
                 <td>60</td>
@@ -554,7 +614,6 @@
                 <td>Тольятти</td>
                 <td>Самарская область</td>
                 <td>Приволжский</td>
-                <td>1737</td>
                 <td>315</td>
                 <td>685</td>
                 <td>58</td>
@@ -565,7 +624,6 @@
                 <td>Сызрань</td>
                 <td>Самарская область</td>
                 <td>Приволжский</td>
-                <td>1683</td>
                 <td>117</td>
                 <td>165</td>
                 <td>48</td>
@@ -576,7 +634,6 @@
                 <td>Уфа</td>
                 <td>Республика Башкортостан</td>
                 <td>Приволжский</td>
-                <td>1574</td>
                 <td>708</td>
                 <td>1 165</td>
                 <td>62</td>
@@ -587,7 +644,6 @@
                 <td>Стерлитамак</td>
                 <td>Республика Башкортостан</td>
                 <td>Приволжский</td>
-                <td>1766</td>
                 <td>108</td>
                 <td>275</td>
                 <td>52</td>
@@ -598,7 +654,6 @@
                 <td>Салават</td>
                 <td>Республика Башкортостан</td>
                 <td>Приволжский</td>
-                <td>1948</td>
                 <td>106</td>
                 <td>148</td>
                 <td>53</td>
@@ -609,7 +664,6 @@
                 <td>Пермь</td>
                 <td>Пермский край</td>
                 <td>Приволжский</td>
-                <td>1723</td>
                 <td>800</td>
                 <td>1 025</td>
                 <td>62</td>
@@ -620,7 +674,6 @@
                 <td>Березники</td>
                 <td>Пермский край</td>
                 <td>Приволжский</td>
-                <td>1932</td>
                 <td>431</td>
                 <td>135</td>
                 <td>55</td>
@@ -631,7 +684,6 @@
                 <td>Соликамск</td>
                 <td>Пермский край</td>
                 <td>Приволжский</td>
-                <td>1430</td>
                 <td>166</td>
                 <td>90</td>
                 <td>52</td>
@@ -642,7 +694,6 @@
                 <td>Волгоград</td>
                 <td>Волгоградская область</td>
                 <td>Южный</td>
-                <td>1589</td>
                 <td>859</td>
                 <td>1 018</td>
                 <td>52</td>
@@ -653,7 +704,6 @@
                 <td>Волжский</td>
                 <td>Волгоградская область</td>
                 <td>Южный</td>
-                <td>1951</td>
                 <td>150</td>
                 <td>315</td>
                 <td>48</td>
@@ -664,7 +714,6 @@
                 <td>Камышин</td>
                 <td>Волгоградская область</td>
                 <td>Южный</td>
-                <td>1668</td>
                 <td>81</td>
                 <td>105</td>
                 <td>42</td>
@@ -675,7 +724,6 @@
                 <td>Кемерово</td>
                 <td>Кемеровская область</td>
                 <td>Сибирский</td>
-                <td>1918</td>
                 <td>282</td>
                 <td>545</td>
                 <td>65</td>
@@ -686,7 +734,6 @@
                 <td>Новокузнецк</td>
                 <td>Кемеровская область</td>
                 <td>Сибирский</td>
-                <td>1618</td>
                 <td>424</td>
                 <td>530</td>
                 <td>68</td>
@@ -697,7 +744,6 @@
                 <td>Прокопьевск</td>
                 <td>Кемеровская область</td>
                 <td>Сибирский</td>
-                <td>1917</td>
                 <td>227</td>
                 <td>185</td>
                 <td>52</td>
@@ -708,7 +754,6 @@
                 <td>Владивосток</td>
                 <td>Приморский край</td>
                 <td>Дальневосточный</td>
-                <td>1860</td>
                 <td>331</td>
                 <td>595</td>
                 <td>85</td>
@@ -719,7 +764,6 @@
                 <td>Уссурийск</td>
                 <td>Приморский край</td>
                 <td>Дальневосточный</td>
-                <td>1866</td>
                 <td>173</td>
                 <td>180</td>
                 <td>60</td>
