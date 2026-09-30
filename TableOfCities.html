@@ -20,13 +20,23 @@
         <form >
             <details>
                 <summary> График</summary>
+
                 <h4>Значение по оси OX</h4>
+
                 <ul type="None">
                     <li><label><input type="radio" name="OxParam" value="Param1"> Субъект РФ</label></li>
-                    <li><label><input type="radio" name="OxParam" value="Param2"> </label></li>
-                    <li><label><input type="radio" name="OxParam" value="Param3"></label></li>
+                    <li><label><input type="radio" name="OxParam" value="Param2"> Федеральный округ</label></li>
+                    <li><label><input type="radio" name="OxParam" value="Param3"> Расстояние от городов до москвы, км (диапазоны)</label></li>
                 </ul>
+
                 <h4>Значение по оси OY</h4>
+
+                <ul type="None">
+                    <li><label><input type="checkbox" name="OyParam" value="Param1"> Суммарное население в городах</label></li>
+                    <li><label><input type="checkbox" name="OyParam" value="Param2"> Суммарная площадь городов</label></li>
+                    <li><label><input type="checkbox" name="OyParam" value="Param3"> Средняя зарплата в городах</label></li>
+                    <li><label><input type="checkbox" name="OyParam" value="Param3"> Количество городов</label></li>
+                </ul>
             </details>
         </form>
 
@@ -48,11 +58,11 @@
                 <th>Город РФ</th>
                 <th>Субъект РФ</th>
                 <th>Федеральный <br> округ</th>
-                <th>Год<br>основания</th>
-                <th>Площадь,<br> км²</th>
-                <th>Население<br>2026 г. (тыс. чел.)</th>
-                <th>Средняя зарплата,<br>тыс. руб.</th>
-                <th>Расстояние до<br>Москвы, км</th>
+                <th>Год основания<br>города</th>
+                <th>Площадь города,<br> км²</th>
+                <th>Население города<br>2026 г. (тыс. чел.)</th>
+                <th>Средняя зарплата<br>в городе, тыс. руб.</th>
+                <th>Расстояние от<br>города до<br>Москвы, км</th>
                 </tr>
             </thead>
             <tbody>
