@@ -7,23 +7,25 @@
         </title>
     </head>
     <body link="black" vlink="black">
-        <a name="TableOfCities"></a>
+        <a href="#" id="TableOfCities"></a>
         
         <hr>  
 
         <ul type="None">
-            <li> <a href="index.html#MainPage" link="blue" vlink="blue">Знаменитые города России</a></li>
-            <li> <a href="TableOfCities.html#TableOfCities" link="blue" vlink="blue"><b><big>Список знаменитых городов России</big></b></a></li>
+            <li> <a href="index.html#MainPage">Знаменитые города России</a></li>
+            <li> <a href="TableOfCities.html#TableOfCities"><b><big>Список знаменитых городов России</big></b></a></li>
         </ul>
 
         <hr> 
 
-        <p>
-            <form >
+        
+            <form>
                 <details>
-                    <summary> График</summary>
+                    <summary><strong><big><em>График</em></big></strong></summary>
 
-                    <h4>Значение по оси OX</h4>
+                    <p>
+                        <big>Значение по оси OX</big>
+                    </p>
 
                     <ul type="None">
                         <li><label><input type="radio" name="ox_param" value="Param1"> Субъект РФ</label></li>
@@ -31,7 +33,9 @@
                         <li><label><input type="radio" name="ox_param" value="Param3"> Расстояние от городов до москвы, км (диапазоны)</label></li>
                     </ul>
 
-                    <h4>Значение по оси OY</h4>
+                    <p>
+                        <big>Значение по оси OY</big>
+                    </p>
 
                     <ul type="None">
                         <li><label><input type="checkbox" name="oy_param" value="Param1"> Суммарное население в городах</label></li>
@@ -49,12 +53,12 @@
                     </p>
                 </details>  
             </form>
-        </p>
+        
 
-        <p>
-            <form >
+        
+            <form>
                 <details>
-                    <summary> Фильтры</summary>
+                    <summary><strong><big><em>Фильтры</em></big></strong></summary>
                     <p>
                         <label>Город РФ: <input type="text" name="city_name_filter" id="city_name_filter"></label>
                     </p>
@@ -68,19 +72,19 @@
                     </p>
 
                     <p>
-                    <label>Площадь города: от <input type="text" name="from_square_filter" id="from_square_filter"> км<sup>2</sup> до <input type="text" name="to_square_filter" id="to_square_filter"> км<sup>2</sup></label>
+                        <label>Площадь города: от <input type="text" name="from_square_filter" id="from_square_filter"> км<sup>2</sup> </label> <label> до <input type="text" name="to_square_filter" id="to_square_filter"> км<sup>2</sup></label>
                     </p>
 
                     <p>
-                    <label>Население города 2026 год: от <input type="text" name="from_population_filter" id="from_population_filter"> тыс.чел. до <input type="text" name="to_population_filter" id="to_population_filter"> тыс.чел.</label>
+                        <label>Население города 2026 год: от <input type="text" name="from_population_filter" id="from_population_filter"> тыс.чел.</label> <label>до <input type="text" name="to_population_filter" id="to_population_filter"> тыс.чел.</label>
                     </p>
 
                     <p>
-                    <label>Средняя зарплата в городе 2026 год: от <input type="text" name="from_salary_filter" id="from_salary_filter"> тыс.рубл. до <input type="text" name="to_salary_filter" id="to_salary_filter"> тыс.рубл.</label>                   
+                        <label>Средняя зарплата в городе 2026 год: от <input type="text" name="from_salary_filter" id="from_salary_filter"> тыс.рубл.</label> <label>до <input type="text" name="to_salary_filter" id="to_salary_filter"> тыс.рубл.</label>                   
                     </p>
 
                     <p>
-                        <label>Расстояние от города до Москвы: от <input type="text" name="from_moskov_distanse_filter" id="from_moskov_distanse_filter"> км. до <input type="text" name="to_moskov_distanse_filter" id="to_moskov_distanse_filter"> км.</label>                   
+                        <label>Расстояние от города до Москвы: от <input type="text" name="from_moskov_distanse_filter" id="from_moskov_distanse_filter"> км.</label> <label>до <input type="text" name="to_moskov_distanse_filter" id="to_moskov_distanse_filter"> км.</label>                   
                     </p>
 
                     <p>
@@ -88,62 +92,69 @@
                     </p>
                 </details>
             </form>
-        </p>
+        
 
-        <p>
-            <form >
+        
+            <form>
                 <details>
-                    <summary> Сортировка</summary>
+                    <summary><strong><big><em>Сортировка</em></big></strong></summary>
 
                     <p>
+                        
+                        <label for="sort_first">Первый уровень:</label>
+                        
+                        <select name="sort_first" id="sort_first">
+                            <option value="none">Нет</option>
+                            <option value="cityname">Город РФ</option>
+                            <option value="subjectname">Субъект РФ</option>
+                            <option value="federaldistrict">Федеральный окуруг РФ</option>
+                            <option value="square">Площадь города</option>
+                            <option value="population">Наседение города 2026 год</option>
+                            <option value="salary">Средняя зарплата в городе 2026 год</option>
+                            <option value="distance">Расстояние до Москвы</option>
+                        </select>
+
                         <label>
-                            <label for="sort_first">Первый уровень:</label>
-                            <select name="sort_first" id="sort_first">
-                                <option value="none">Нет</option>
-                                <option value="cityname">Город РФ</option>
-                                <option value="subjectname">Субъект РФ</option>
-                                <option value="federaldistrict">Федеральный окуруг РФ</option>
-                                <option value="square">Площадь города</option>
-                                <option value="population">Наседение города 2026 год</option>
-                                <option value="salary">Средняя зарплата в городе 2026 год</option>
-                                <option value="distance">Расстояние до Москвы</option>
-                            </select>
                             по убыванию?
                             <input type="checkbox">
                         </label>
                     </p>
                         
-                    <p>
+                    <p>                        
+                        <label for="sort_second">Второй уровень:</label>
+
+                        <select name="sort_second" id="sort_second">
+                            <option value="none">Нет</option>
+                            <option value="cityname">Город РФ</option>
+                            <option value="subjectname">Субъект РФ</option>
+                            <option value="federaldistrict">Федеральный окуруг РФ</option>
+                            <option value="square">Площадь города</option>
+                            <option value="population">Наседение города 2026 год</option>
+                            <option value="salary">Средняя зарплата в городе 2026 год</option>
+                            <option value="distance">Расстояние до Москвы</option>
+                        </select>
+
                         <label>
-                            <label for="sort_second">Второй уровень:</label>
-                            <select name="sort_second" id="sort_second">
-                                <option value="none">Нет</option>
-                                <option value="cityname">Город РФ</option>
-                                <option value="subjectname">Субъект РФ</option>
-                                <option value="federaldistrict">Федеральный окуруг РФ</option>
-                                <option value="square">Площадь города</option>
-                                <option value="population">Наседение города 2026 год</option>
-                                <option value="salary">Средняя зарплата в городе 2026 год</option>
-                                <option value="distance">Расстояние до Москвы</option>
-                            </select>
                             по убыванию?
                             <input type="checkbox">
                         </label>
                     </p>
 
                     <p>
+                        <label for="sort_third">Третий уровень:</label>
+                        
+                        <select name="sort_third" id="sort_third">
+                            <option value="none">Нет</option>
+                            <option value="cityname">Город РФ</option>
+                            <option value="subjectname">Субъект РФ</option>
+                            <option value="federaldistrict">Федеральный окуруг РФ</option>
+                            <option value="square">Площадь города</option>
+                            <option value="population">Наседение города 2026 год</option>
+                            <option value="salary">Средняя зарплата в городе 2026 год</option>
+                            <option value="distance">Расстояние до Москвы</option>
+                        </select>
+
                         <label>
-                            <label for="sort_third">Третий уровень:</label>
-                            <select name="sort_third" id="sort_third">
-                                <option value="none">Нет</option>
-                                <option value="cityname">Город РФ</option>
-                                <option value="subjectname">Субъект РФ</option>
-                                <option value="federaldistrict">Федеральный окуруг РФ</option>
-                                <option value="square">Площадь города</option>
-                                <option value="population">Наседение города 2026 год</option>
-                                <option value="salary">Средняя зарплата в городе 2026 год</option>
-                                <option value="distance">Расстояние до Москвы</option>
-                            </select>
                             по убыванию?
                             <input type="checkbox">
                         </label>
@@ -155,9 +166,9 @@
                     </p>
                 </details>
             </form>
-        </p>
+        
 
-        <table border="1">
+        <table cellpadding="4" cellspacing="4">
             <thead>
                 <tr>
                 <th>Город РФ</th>
